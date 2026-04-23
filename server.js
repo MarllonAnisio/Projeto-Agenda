@@ -24,7 +24,26 @@ mongoose.connect(process.env.uri)
     .catch(err => console.log("Erro ao tentar conectar ao MongoDB: " + err));
 
 // 4. Configurações de Segurança e Parseamento
-app.use(helmet()); // O Helmet deve ser um dos primeiros para já proteger os cabeçalhos HTTP
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"], // Permite recursos do próprio servidor
+            scriptSrc: [
+                "'self'", 
+                "https://cdn.jsdelivr.net", // Libera o JS do Bootstrap
+                "'unsafe-inline'" // Permite scripts do Webpack, se você usar
+            ],
+            styleSrc: [
+                "'self'", 
+                "https://cdn.jsdelivr.net", // Libera o CSS do Bootstrap
+                "'unsafe-inline'" // Permite CSS injetado diretamente na página
+            ],
+            imgSrc: ["'self'", "data:", "https:"],// Permite imagens normais
+            connectSrc: ["'self'", "https://cdn.jsdelivr.net"], // Permite conexões para APIs externas, se necessário
+            upgradeInsecureRequests: [],
+        },
+    },
+}));// O Helmet deve ser um dos primeiros para já proteger os cabeçalhos HTTP
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // envio de dados via fetch/JSON no futuro
 app.use(express.static(path.resolve(__dirname, 'public')));

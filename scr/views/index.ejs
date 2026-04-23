@@ -1,12 +1,22 @@
-<%-include('./includes/head.ejs')%>
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
 
-    <section class="conteiner">
-        <h1>Projeto Agenda</h1>
-        <form action="/" method="post">
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <input type="text" name="nome" placeholder="Digite seu nome">
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
 
-<%-include('./includes/footer.ejs')%>
+        <div class="col-lg-8 my-5">
+            <h1 class="text-center">Agenda</h1>
+            <p class="text-center lead"> Seus contatos estão abaixo, clique em um contato para ver os detalhes.
+            </p>
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-danger"> um erro</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<%- include('includes/footer.ejs') %>
