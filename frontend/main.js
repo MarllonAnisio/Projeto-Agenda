@@ -1,6 +1,6 @@
 import 'core-js/stable';
 import 'regenerator-runtime';
-import "./assets/css/style.css";
+
 
 function enviar() {
     const nome = document.querySelector('input[name="nome"]').value;
