@@ -1,56 +1,57 @@
 <%- include('includes/head.ejs') %>
 <%- include('includes/nav.ejs') %>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-2"></div>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-12">
+            
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Minha Agenda</h1>
+                <p class="lead">Seus contatos estão abaixo. Clique em um contato para ver os detalhes ou editar.</p>
+            </div>
 
-        <div class="col-lg-8 my-5">
-            <h1 class="text-center">Agenda</h1>
-            <p class="text-center lead"> Seus contatos estão abaixo, clique em um contato para ver os detalhes.
-            </p>
-            <div class="row">
-                <div class="col">
-                    <div class="alert alert-danger"> um erro</div>
+            <div class="card shadow-sm">
+                <div class="card-body p-0"> <div class="table-responsive">
+                        <table class="table table-hover table-striped mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Sobrenome</th>
+                                    <th>Telefone</th>
+                                    <th>E-mail</th>
+                                    <th class="text-center">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Marllon</td>
+                                    <td>Anisio</td>
+                                    <td>(83) 90000-0000</td>
+                                    <td>marllon@gmail.com</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Editar</a>
+                                        <a href="#" class="btn btn-sm btn-outline-danger">Apagar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jurandir</td>
+                                    <td>Plinio</td>
+                                    <td>(83) 91111-1111</td>
+                                    <td>jurandir@gmail.com</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Editar</a>
+                                        <a href="#" class="btn btn-sm btn-outline-danger">Apagar</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                    
                 </div>
             </div>
-        </div>
 
-        <div class="responsive-table">
-            <table class="table my-3">
-                <tr>
-                    <td>Marllon</td>
-                    <td>Anisio</td>
-                    <td>465293465</td>
-                    <td>marllon@gmail.com</td>
-                    <td>marllon-anisio</td>
-                </tr>
-                <tr>
-                    <td>Jurandir</td>
-                    <td>Plinio</td>
-                    <td>465293465</td>
-                    <td>marllon@gmail.com</td>
-                    <td>marllon-anisio</td>
-                </tr>
-                <tr>
-                    <td>Narlion</td>
-                    <td>Francis</td>
-                    <td>465293465</td>
-                    <td>marllon@gmail.com</td>
-                    <td>marllon-anisio</td>
-                </tr>
-                <tr>
-                    <td>Augusto</td>
-                    <td>Baltazar</td>
-                    <td>465293465</td>
-                    <td>marllon@gmail.com</td>
-                    <td>marllon-anisio</td>
-                </tr>
-            </table>
         </div>
-
     </div>
-
 </div>
 
 <%- include('includes/footer.ejs') %>
