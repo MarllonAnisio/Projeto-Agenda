@@ -1,5 +1,7 @@
 exports.globalMiddleware = (req, res, next) => {
-    console.log("Middleware aqui");
+    console.log("Passei no globalMiddleware");
+    res.locals.errors = req.flash('errors');
+    console.log("res.locals.errors", res.locals.errors);
     next();
 }
 

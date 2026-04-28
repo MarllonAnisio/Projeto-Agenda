@@ -13,8 +13,8 @@
             <div class="card shadow-sm">
                 <div class="card-body p-4">
                     <h4 class="mb-4">Seus Dados</h4>
-                    
-                    <form action="/cadastro" method="POST">
+                    <%- include('includes/messages.ejs') %>
+                    <form action="/cadastro/registrar" method="POST">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <div class="mb-3">
                             <label for="nameInput" class="form-label">Nome</label>

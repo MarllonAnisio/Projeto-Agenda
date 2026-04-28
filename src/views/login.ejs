@@ -13,10 +13,13 @@
           <div class="card shadow-sm">
             <div class="card-body p-4">
               <h4 class="mb-4 text-center">Entrar</h4>
-
-              <form action="/login" method="POST">
+              
+              <%console.log("antes de incluir mensagens")%>
+              <%- include('includes/messages.ejs') %>
+              <%console.log("passou de mensagens")%>
+              
+              <form action="/login/login" method="POST">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-
                 <div class="mb-3">
                   <label for="emailLogin" class="form-label">E-mail</label>
                   <input type="email" class="form-control" id="emailLogin" name="email" required>

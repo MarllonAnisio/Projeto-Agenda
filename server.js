@@ -13,7 +13,7 @@ const path = require('path');
 
 // 2. Importações Nativas (Nossas Rotas e Middlewares)
 const routes = require('./routes');
-const { globalMiddleware, checkCsrfError, csrfMiddleware } = require('./scr/middlewares/middlewares');
+const { globalMiddleware, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middlewares');
 
 // 3. Conexão com o Banco de Dados
 mongoose.connect(process.env.uri)
@@ -64,7 +64,7 @@ app.use(secretSession);
 app.use(flash());
 
 // 6. Configurações das Views (EJS)
-app.set('views', path.resolve(__dirname, 'scr', 'views'));
+app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
 // 7. Segurança CSRF (Sempre DEPOIS da sessão e ANTES das rotas)
